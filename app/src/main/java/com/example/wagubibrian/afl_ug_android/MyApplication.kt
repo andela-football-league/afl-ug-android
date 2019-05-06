@@ -7,15 +7,20 @@ import com.example.wagubibrian.afl_ug_android.domain.di.modules.AppModule
 
 class MyApplication: Application() {
 
-    val component: AppComponent by lazy {
-        DaggerAppComponent
-            .builder()
-            .appModule(AppModule(this))
-            .build()
+    companion object {
+         lateinit var component: AppComponent
     }
 
     override fun onCreate() {
         super.onCreate()
-        component.inject(this)
+
+        initDi()
+    }
+
+    private fun initDi() {
+        component = DaggerAppComponent
+            .builder()
+            .appModule(AppModule(this))
+            .build()
     }
 }
