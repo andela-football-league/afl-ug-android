@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Andela Football</string>
     <string name="welcome_message">Welcome to the project.</string>
+    <string name="google_sign_in">Google Sign In</string>
+    <string name="title_activity_dummy">DummyActivity</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
 </resources>
