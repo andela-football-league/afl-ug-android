@@ -11,7 +11,7 @@ import android.widget.ProgressBar
 import com.example.wagubibrian.afl_ug_android.MyApplication
 import com.example.wagubibrian.afl_ug_android.R
 import com.example.wagubibrian.afl_ug_android.domain.di.helper.ViewModelFactory
-import com.example.wagubibrian.afl_ug_android.dummy.DummyActivity
+import com.example.wagubibrian.afl_ug_android.main.MainActivity
 import com.google.android.gms.common.api.ApiException
 import javax.inject.Inject
 
@@ -45,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun signIn() {
+        progressBar.visibility = View.VISIBLE
         startActivityForResult(viewModel.getSignInIntent(), RCSIGNIN)
     }
 
@@ -54,12 +55,10 @@ class LoginActivity : AppCompatActivity() {
             RCSIGNIN -> {
                 val task = viewModel.getSignedAccount(data!!)
                 try {
-                    progressBar.visibility = View.VISIBLE
                     val account = task.getResult(ApiException::class.java)
                     viewModel.firebaseAuthWithGoogle(account!!) {
-                        var intent = Intent(this, DummyActivity::class.java)
                         if (it)
-                            startActivity(intent)
+                            navigateMainActivity()
                         progressBar.visibility = View.GONE
                     }
                 } catch (e: ApiException) {
@@ -69,5 +68,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun navigateMainActivity() {
+        var intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
 }
 

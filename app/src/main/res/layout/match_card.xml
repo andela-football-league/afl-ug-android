@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:cardview="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        cardview:cardCornerRadius="10dp"
+        cardview:cardElevation="10dp"
+        android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp">
+
+        <ImageView
+                android:layout_width="37dp"
+                android:layout_height="36dp"
+                android:id="@+id/imageView2"
+                android:src="@mipmap/kill_ball_logo"
+                cardview:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="68dp"
+                cardview:layout_constraintBottom_toTopOf="@+id/text_view"
+                android:layout_marginTop="8dp"
+                cardview:layout_constraintTop_toTopOf="parent"
+                android:background="#C2C2C2"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Team A"
+                android:id="@+id/text_view"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginEnd="36dp"
+                cardview:layout_constraintEnd_toEndOf="parent"
+                cardview:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="64dp"/>
+        <TextView
+                android:text="Vs"
+                android:textStyle="bold|italic"
+                android:textSize="45sp"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:id="@+id/textView"
+                android:layout_marginTop="16dp"
+                cardview:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                cardview:layout_constraintEnd_toStartOf="@+id/imageView2"
+                cardview:layout_constraintStart_toEndOf="@+id/imageView"
+                android:layout_marginStart="8dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Team B"
+                android:id="@+id/text_vie"
+                android:padding="10dp"
+                android:layout_marginStart="36dp"
+                cardview:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="64dp"
+                cardview:layout_constraintTop_toTopOf="parent"/>
+        <Button
+                android:text="Start Game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:textColor="#fff"
+                android:background="@drawable/round_corner_button"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:layout_marginEnd="8dp"
+                cardview:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                cardview:layout_constraintStart_toStartOf="parent"
+                cardview:layout_constraintHorizontal_bias="0.501"
+                android:layout_marginTop="40dp"
+                cardview:layout_constraintTop_toBottomOf="@+id/textView"/>
+        <ImageView
+                android:layout_width="37dp"
+                android:layout_height="36dp"
+                android:src="@mipmap/ball_logo"
+                android:id="@+id/imageView"
+                cardview:layout_constraintBottom_toTopOf="@+id/text_vie"
+                android:layout_marginTop="8dp"
+                cardview:layout_constraintTop_toTopOf="parent"
+                cardview:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="64dp"
+                android:background="#C2C2C2"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
