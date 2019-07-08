@@ -4,12 +4,12 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import com.example.wagubibrian.afl_ug_android.MyApplication
 import com.example.wagubibrian.afl_ug_android.R
 import com.example.wagubibrian.afl_ug_android.databinding.ActivitySplashScreenBinding
 import com.example.wagubibrian.afl_ug_android.domain.di.helper.ViewModelFactory
 import com.example.wagubibrian.afl_ug_android.domain.views.BaseActivity
+import com.example.wagubibrian.afl_ug_android.dummy.DummyActivity
 import com.example.wagubibrian.afl_ug_android.login.LoginActivity
 import javax.inject.Inject
 
@@ -31,11 +31,11 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashScreenViewModel::class.java)
         Handler().postDelayed({
         if (viewModel.isUserLoggedIn()) {
-            var intent = Intent(this, LoginActivity::class.java)
+            var intent = Intent(this, DummyActivity::class.java)
             startActivity(intent)
         } else {
-            Toast.makeText(this, "Please Login", Toast.LENGTH_LONG).show()
-        }
-        }, 3000)
+            var intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        } }, 3000)
     }
 }
