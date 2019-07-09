@@ -9,8 +9,8 @@ import com.example.wagubibrian.afl_ug_android.R
 import com.example.wagubibrian.afl_ug_android.databinding.ActivitySplashScreenBinding
 import com.example.wagubibrian.afl_ug_android.domain.di.helper.ViewModelFactory
 import com.example.wagubibrian.afl_ug_android.domain.views.BaseActivity
-import com.example.wagubibrian.afl_ug_android.dummy.DummyActivity
 import com.example.wagubibrian.afl_ug_android.login.LoginActivity
+import com.example.wagubibrian.afl_ug_android.main.MainActivity
 import javax.inject.Inject
 
 class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
@@ -31,7 +31,7 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashScreenViewModel::class.java)
         Handler().postDelayed({
         if (viewModel.isUserLoggedIn()) {
-            var intent = Intent(this, DummyActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {
             var intent = Intent(this, LoginActivity::class.java)
