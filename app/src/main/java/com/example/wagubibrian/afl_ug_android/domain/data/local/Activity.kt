@@ -19,5 +19,9 @@ data class Activity(
     @ColumnInfo(name= "player_name")
     var playerName: String,
     @ColumnInfo(name= "match_id")
-    var matchId: Int
+    var matchId: Int,
+    @ColumnInfo(name= "home_status")
+    var homeStatus: Boolean,
+    @ColumnInfo(name= "time")
+    var time: String
 )

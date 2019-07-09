@@ -102,8 +102,9 @@ class PlayersFragment : DialogFragment() {
     }
 
     fun addConfirmedActivity(playerName: String) {
+        var homeStatus = homeAwayStatus == "home"
         var obs = viewModel
-            .addActivity(playerName,activity)
+            .addActivity(playerName,activity, homeStatus)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe( {}, {

@@ -1,6 +1,7 @@
 package com.example.wagubibrian.afl_ug_android.domain.di.component
 
 import com.example.wagubibrian.afl_ug_android.MyApplication
+import com.example.wagubibrian.afl_ug_android.activity.ActivityFragment
 import com.example.wagubibrian.afl_ug_android.domain.di.modules.AppModule
 import com.example.wagubibrian.afl_ug_android.domain.di.modules.GoogleSignInModule
 import com.example.wagubibrian.afl_ug_android.domain.di.modules.ViewModelModule
@@ -26,4 +27,6 @@ interface AppComponent {
     fun inject(homeFragment: HomeFragment)
 
     fun inject(playersFragment: PlayersFragment)
+
+    fun inject(activityFragment: ActivityFragment)
 }
