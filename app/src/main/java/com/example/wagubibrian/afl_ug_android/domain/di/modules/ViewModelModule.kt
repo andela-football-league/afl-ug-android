@@ -1,6 +1,7 @@
 package com.example.wagubibrian.afl_ug_android.domain.di.modules
 
 import android.arch.lifecycle.ViewModel
+import com.example.wagubibrian.afl_ug_android.activity.ActivityViewModel
 import com.example.wagubibrian.afl_ug_android.domain.di.helper.ViewModelKey
 import com.example.wagubibrian.afl_ug_android.home.HomeViewModel
 import com.example.wagubibrian.afl_ug_android.login.LoginActivityViewModel
@@ -37,4 +38,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(PlayerViewModel::class)
     abstract fun providesPlayersViewModel(playerViewModel: PlayerViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ActivityViewModel::class)
+    abstract fun providesActivityViewModel(activityViewModel: ActivityViewModel): ViewModel
 }

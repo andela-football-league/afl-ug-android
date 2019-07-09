@@ -3,10 +3,10 @@ package com.example.wagubibrian.afl_ug_android.main
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.example.wagubibrian.afl_ug_android.R
+import com.example.wagubibrian.afl_ug_android.activity.ActivityFragment
 import com.example.wagubibrian.afl_ug_android.home.HomeFragment
 import com.example.wagubibrian.afl_ug_android.match.MatchFragment
 
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                switchNavView(ActivityFragment.newInstance())
                 return@OnNavigationItemSelectedListener true
             }
         }

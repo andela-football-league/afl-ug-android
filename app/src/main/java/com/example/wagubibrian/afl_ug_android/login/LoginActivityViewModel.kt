@@ -21,7 +21,6 @@ class LoginActivityViewModel @Inject constructor(var app: Application, var auth:
 
     fun getSignInIntent() = googleSignInClient.signInIntent
 
-
     private fun checkForAndelaDomain(account: GoogleSignInAccount): Boolean {
         var email = account.email
         var list = email?.split("@")
