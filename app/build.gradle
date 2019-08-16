@@ -42,6 +42,8 @@ dependencies {
     implementation "com.android.support:support-vector-drawable:$rootProject.ext.supportVectorDrwawable"
     implementation "com.android.support:support-v4:$rootProject.ext.supportVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.recyclerViewVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVerson"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.testRunnerVesion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoCoreVersion"
